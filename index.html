@@ -105,6 +105,18 @@
       <p>Hecho con HTML, CSS y JavaScript para aprender baseball.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const toggleBtn = document.getElementById('toggleBtn');
+        const tipsPanel = document.getElementById('tipsPanel');
+
+        if (toggleBtn && tipsPanel) {
+          toggleBtn.addEventListener('click', () => {
+            const isHidden = tipsPanel.classList.toggle('hidden');
+            toggleBtn.textContent = isHidden ? 'Mostrar reglas rápidas' : 'Ocultar reglas rápidas';
+          });
+        }
+      });
+    </script>
   </body>
 </html>
